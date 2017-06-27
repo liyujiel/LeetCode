@@ -1,6 +1,6 @@
 class TrieNode():
     def __init__(self,key):
-        self.word = 0
+        self.word = False
         self.key = key
         self.children = {}
 
@@ -25,7 +25,7 @@ class Trie(object):
             if char not in node.children:
                 node.children[char] = TrieNode(char)
             node = node.children[char]
-        node.children += 1
+        node.word = True
 
     def search(self, word):
         """
